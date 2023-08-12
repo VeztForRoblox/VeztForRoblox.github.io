@@ -1,1 +1,1 @@
-# VeztForRoblox.github.io
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VeztWare/Vezt/Vezt - BedWars"))()
