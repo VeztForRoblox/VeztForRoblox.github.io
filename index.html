@@ -1,7 +1,30 @@
-<script src="script.js"></script>  ```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetched Data</title>
+</head>
+<body>
+  <h1>Fetched Text</h1>
+  <p id="data-container"></p>
 
-3. **Functionality:** Inside your `script.js` file, write your JavaScript code that fetches data or performs any desired actions.
+  <script>
+    async function fetchData(url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Error fetching data");
+        }
+        const data = await response.text();
+        document.getElementById("data-container").textContent = data;
+      } catch (error) {
+        document.getElementById("data-container").textContent = "Error fetching data";
+      }
+    }
 
-4. **Push to GitHub:** Once you have both `index.html` and `script.js` in the root directory, push the changes to your GitHub repository. GitHub Pages will automatically build and deploy your website.
-
-Now, when you visit your GitHub Pages URL, the `index.html` will be loaded, and your JavaScript code from `script.js` will be executed within the context of the webpage. 
+    const link = "https://veztware.github.io"; // Replace with your actual URL
+    fetchData(link);
+  </script>
+</body>
+</html>
